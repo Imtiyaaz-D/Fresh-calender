@@ -7,7 +7,7 @@ todayBtn = document.querySelector(".today-btn")
 
 const months = [
     "January",
-    "Febrauary",
+    "February",
     "March",
     "June",
     "July",
@@ -24,12 +24,13 @@ const days = ["Sun", "Mon","Tue","Wed","Thu","Fri","Sat"];
 // get current date
 const date = new Date();
 // get current month
-let currentMonth = data.getMonth();
+let currentMonth = date.getMonth();
 // get current year
 let currentYear = date.getFullYear();
 
 // func to render days
 function renderCalendar(){
+    let days = "";
     date.setDate(1);
     const firstDay = new Date (currentYear, currentMonth,1);
     const lastDay = new Date (currentYear, currentMonth + 1 ,0);
@@ -39,13 +40,12 @@ function renderCalendar(){
     const prevLastDayDate =prevLastDay.getDate();
     const nextDays = 7 - lastDayIndex - 1;
 
-}
 
-// update current year and month in the header
+    // update current year and month in the header
 month.innerHTML = `${months[currentMonth]} ${currentYear}`
 
-// update days html
-// let days = "";
+
+
 
 // prev days html
 for (let x = firstDay.getDate(); x > 0 ; x--){
@@ -66,18 +66,16 @@ for(let i = 1 ; i <= lastDayDate; i++){
         // else dont add today
         days += `<div class="day">${i}</div>`;
     }
-
+}
     // next month days 
 for(let j = 1 ; j <= nextDays; j++){
     days += `<div class="day next">${j}</div>`;
 }
-
 // run this function with every calender render
 hideTodayBtn();
 daysContainer.innerHTML = days;
 
 }
-
 renderCalendar();
 
 nextBtn.addEventListener("click", () => {
