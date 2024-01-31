@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,500;1,200;1,700&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 :root{
     --primary-color:#f90a39;
     --text-color:#1d1d1d;
@@ -59,12 +59,17 @@ body{
     cursor: pointer;
     transition: all 0.3s;
 }
+.calendar .header .btns .btn:hover{
+    background-color: #db0933;
+    transform: scale(1.05);
+
+}
 .weekdays{
     display: flex;
     gap: 10px;
     margin-bottom: 10px;
 }
-.weekdays .days{
+.weekdays .day{
     width: calc(100% / 7 - 10px );
     text-align: center;
     font-size: 16px;
@@ -93,6 +98,10 @@ body{
 color: #fff;
 background-color: var(--primary-color);
 transform: scale(1.05);
+}
+.days .day.today{
+    color: #fff;
+    background-color: var(--primary-color);
 }
 .days .day.next,.days .day.prev{
     color: #ccc;
