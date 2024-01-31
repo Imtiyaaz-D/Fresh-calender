@@ -9,6 +9,8 @@ const months = [
     "January",
     "February",
     "March",
+    "April",
+    "May",
     "June",
     "July",
     "August",
@@ -48,6 +50,9 @@ month.innerHTML = `${months[currentMonth]} ${currentYear}`
 
 
 // prev days html
+// for(let x = firstDay.getDay() === 0 ? 6 : firstDay.getDay() - 1; x > 0; x--){
+//   daysHTML += `<div class ="days prev">${prevLastDayDate - x + 1}</div>`;
+// }
 for (let x = firstDay.getDate(); x > 0 ; x--){
     days += `<div class="day prev">${prevLastDayDate - x + 1}</div>`;
 }
